@@ -1,20 +1,19 @@
 #include <stdio.h>
 
-int fun(int n)
+void fun(int n)
 {
-    static int x = 0;
     if (n > 0)
     {
-        x++;
-        return fun(n - 1) + x;
+       printf("%d ",n);
+       fun(n-1);
+       fun(n-1);
     };
+
 }
 
 int main()
 {
-    int r;
-    r = fun(5);
-    printf("%d\n", r);
+    fun(3);
 
     return 0;
 }
