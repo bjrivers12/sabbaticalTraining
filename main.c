@@ -1,18 +1,21 @@
 #include <stdio.h>
 
-int fun(int n)
+int pow(int m, int n)
 {
-    if (n > 100)
+    if (n == 0)
     {
-        return n - 10;
+        return 1;
     }
     else
     {
-        return fun(fun(n + 11));
+        return pow(m, n - 1);
     }
 }
 
 int main()
 {
+    int r;
+    r = pow(2, 5);
+    printf("%d ", r);
     return 0;
 }
