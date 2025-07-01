@@ -9,3 +9,30 @@ class Journal:
 
     def remove_entry(self, pos):
         del self.entries[pos]
+        
+    def __str__(self):
+        return '\n'.join(self.entries)
+    
+    # def save(self, filename):
+    #     file = open(filename, 'w')
+    #     file.write(str(self))
+    #     file.close()
+        
+    # def load(self, filename):
+    #     pass
+    
+    # def load_from_web(self,uri):
+    #     pass
+    
+class PersistenceManager:
+    @staticmethod
+    def save_to_file(journal,filename):
+        file = open(filename, 'w')
+        file.write(str(journal))
+        file.close()
+        
+    def load(self, filename):
+        pass
+    
+    def load_from_web(self,uri):
+        pass
