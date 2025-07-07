@@ -16,6 +16,8 @@ RUN apt-get update && \
     xz-utils && \
     curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
     apt-get install -y nodejs && \
+    #Install Jasmine
+    npm install -g jasmine && \
     # Install Rust
     curl https://sh.rustup.rs -sSf | sh -s -- -y && \
     # Install Go
