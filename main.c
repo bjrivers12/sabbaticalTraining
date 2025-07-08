@@ -1,31 +1,20 @@
 #include <stdio.h>
 
-int pow(int m, int n)
+double e(int x, int n)
 {
-    if (n == 0)
-    {
-        return 1;
-        return 1;
-    }
-    else
-    {
-        return pow(m, n - 1);
-    }
-}
+    static double p = 1, f = 1;
+    double r;
 
-int Ifact(int n)
-{
-    int f = 1;
-    int i;
-    for (i = 1; i <= n; i++)
-        f = f * i;
-    return f;
+    if (n == 0)
+        return 1;
+    r = e(x, n - 1);
+    p = p * x;
+    f = f * n;
+    return r + p / f;
 }
 
 int main()
 {
-    int r;
-    r = pow(2, 5);
-    printf("%d ", r);
+    printf("%lf \n", e(1, 10));
     return 0;
 }
