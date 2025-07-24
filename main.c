@@ -1,53 +1,31 @@
 #include <stdio.h>
 
-int f[10];
-
-int fib(int n)
+int fact(int n)
 {
-    int t0 = 0, t1 = 1, s = 0, i;
-    if (n <= 1)
-        return n;
-    for (i = 2; i <= n; i++)
-    {
-        s = t0 + t1;
-        t0 = t1;
-        t1 = s;
-    }
-    return s;
+    if(n==0) return 1;
+    return fact(n-1)*n;
 }
 
-int rfib(int n)
+int nCr(int n, int r)
 {
-    if (n <= 1)
-        return n;
-    return rfib(n - 2) + rfib(n - 1);
+    int num, den;
+    num=fact(n);
+    den=fact(r)*fact(n-r);
+
+    return num/den;
 }
 
-int F[10];
-
-int mfib(int n)
+int NCR(int n, int r)
 {
-    if (n <= 1)
-    {
-        F[n] = n;
-        return n;
-    }
-    else
-    {
-        if (F[n - 2] == -1)
-            F[n - 2] = mfib(n - 2);
-        if (F[n - 1] == -1)
-            F[n - 1] = mfib(n - 1);
-        F[n] = F[n - 2] + F[n - 1];
-        return F[n - 2] + F[n - 1];
-    }
+    if(n==r || r==0)
+        return 1;
+    return NCR(n-1,r-1)+NCR(n-1,r);
 }
 
 int main()
 {
-    int i;
-    for (i = 0; i < 10; i++)
-        F[i] = -1;
-    printf("%d \n", mfib(10));
+    
+    printf("%d \n", nCr(5,3));
+    printf("%d \n", NCR(5,3));
     return 0;
 }
