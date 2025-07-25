@@ -1,31 +1,17 @@
 #include <stdio.h>
 
-int fact(int n)
+void TOH(int n, int A, int B, int C)
 {
-    if(n==0) return 1;
-    return fact(n-1)*n;
-}
-
-int nCr(int n, int r)
-{
-    int num, den;
-    num=fact(n);
-    den=fact(r)*fact(n-r);
-
-    return num/den;
-}
-
-int NCR(int n, int r)
-{
-    if(n==r || r==0)
-        return 1;
-    return NCR(n-1,r-1)+NCR(n-1,r);
+    if(n>0){
+        TOH(n-1,A,C,B);
+        printf("(%d,%d)\n",A,C);
+        TOH(n-1,B,A,C);
+    }
 }
 
 int main()
 {
     
-    printf("%d \n", nCr(5,3));
-    printf("%d \n", NCR(5,3));
+    TOH(3,1,2,3);
     return 0;
 }
