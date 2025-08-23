@@ -13,6 +13,7 @@ RUN apt-get update && \
     curl \
     wget \
     ca-certificates \
+    vim \
     xz-utils && \
     curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
     apt-get install -y nodejs && \
