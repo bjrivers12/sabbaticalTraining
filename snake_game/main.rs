@@ -2,14 +2,12 @@
 
 
 fn main(){
-    let mut message = "Hello World";
-    println!("Some text:{}",message);
-    message = "Hi there";
-    println!("Some text:{}",message);
+    let message = "Hello World";
+    print_welcome(message);
+}
 
-    let mut age = 19;
-    println!("Some text:{}",age);
-    age = 30;
-    println!("Some text:{}",age);
+fn print_welcome(text: &str){
+    println!("{}",text);
 
 }
+
