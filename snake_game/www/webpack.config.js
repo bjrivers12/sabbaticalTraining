@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
 	mode: "development",
-	entry: "./index.js",
+	entry: "./bootstrap.js",
 	output: {
 	  path: path.resolve(__dirname, "public"),
 		filename: "bundle.js"
@@ -16,7 +16,7 @@ module.exports = {
 	plugins: [
 		new CopyWebpackPlugin({
 			patterns: [
-				{ from: "./index.html", to: "./"}
+				{ from: "./bootstrap.html", to: "./"}
 			]
 		})
 	]
