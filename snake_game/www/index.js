@@ -1,6 +1,9 @@
-import init, {greet} from "snake_game";
+import init, { World } from "snake_game";
 
 init().then(_=>{
-	greet("Brian");
-	console.log("ok");
+	const world =  World.new();
+	const canvas = document.getElementById("snake-canvas");
+	const ctx = canvas.getContext("2d");
+	debugger
+	
 })
