@@ -13,6 +13,13 @@ module.exports = {
     static: path.resolve(__dirname, 'public'),
     port: 8080,
   },
+  resole: {
+	fallback: {
+		stream: require.resolve("stream-browserify"),
+		buffer: require.resolve("buffer/"),
+	},
+  },
+
 	plugins: [
 		new CopyWebpackPlugin({
 			patterns: [

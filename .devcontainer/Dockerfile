@@ -22,6 +22,9 @@ RUN apt-get update && \
     npm install -g jasmine && \
     # Install Rust
     curl https://sh.rustup.rs -sSf | sh -s -- -y && \
+    . $HOME/.cargo/env && \
+    rustup target add wasm32-unknown-unknown && \
+    cargo install wasm-pack && \
     # Install Go
     GO_VERSION=1.22.3 && \
     wget https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz && \

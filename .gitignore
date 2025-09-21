@@ -22,3 +22,4 @@ rust/hello_world/target/debug/.fingerprint/hello_world-0268e55f498388c0/invoked.
 rust/hello_world/target/CACHEDIR.TAG
 rust/hello_world/target/
 */target/
+node_modules
