@@ -1,5 +1,4 @@
 import init, { World } from "snake_game";
-import { CleanPlugin } from "webpack";
 
 init().then((_) => {
   const CELL_SIZE = 10;
@@ -25,21 +24,30 @@ init().then((_) => {
 
     ctx.stroke();
   }
-  
-  drawWorld();
 
-  function drawSnake(){
+  function drawSnake() {
     const snakeIdx = world.snake_head_idx();
     const col = snakeIdx % worldWidth;
-    const row = Math.floor(snakeIdx/worldWidth);
+    const row = Math.floor(snakeIdx / worldWidth);
 
     ctx.beginPath();
-    ctx.fillRect(
-      col * CELL_SIZE,
-      row * CELL_SIZE,
-      CELL_SIZE,
-      CELL_SIZE
-    )
+    ctx.fillRect(col * CELL_SIZE, row * CELL_SIZE, CELL_SIZE, CELL_SIZE);
     ctx.stroke();
   }
+
+  function paint() {
+    drawWorld();
+    drawSnake();
+  }
+  function update() {
+    setInterval(() => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawWorld();
+      drawSnake();
+      world.update();
+    }, 100);
+  }
+
+  paint();
+  update();
 });

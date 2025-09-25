@@ -13,11 +13,14 @@
   "license": "ISC",
   "dependencies": {
     "copy-webpack-plugin": "^13.0.1",
+    "snake_game": "file:../pkg",
     "webpack": "^5.101.3",
-    "webpack-cli": "^6.0.1",
-    "snake_game":"file:../pkg"
+    "webpack-cli": "^6.0.1"
   },
   "devDependencies": {
+    "buffer": "^6.0.3",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
     "webpack-dev-server": "^5.2.2"
   }
 }

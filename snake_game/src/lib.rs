@@ -20,14 +20,17 @@ impl Snake {
 #[wasm_bindgen]
 pub struct World {
     width: usize,
+    size: usize,
     snake: Snake,
 }
 
 #[wasm_bindgen]
 impl World {
     pub fn new() -> World {
+        let width: usize = 8;
         World {
-            width: 8,
+            width,
+            size: width * width,
             snake: Snake::new(10),
         }
     }
@@ -38,6 +41,11 @@ impl World {
 
     pub fn snake_head_idx(&self) -> usize {
         self.snake.body[0].0
+    }
+
+    pub fn update(&mut self){
+        let snake_idx = self.snake_head_idx();
+        self.snake.body[0].0 = (snake_idx + self.size - 1) % self.size;
     }
 }
 
@@ -51,3 +59,6 @@ impl World {
 //     pub fn alert(s: &str);
 // }
 //wasm-pack build --target web
+//cargo watch -s "wasm-pack build --target web --out-dir www/pkg --dev"
+
+//cargo watch -s "wasm-pack build --target web --out-dir www/pkg --dev && touch reload.trigger"
