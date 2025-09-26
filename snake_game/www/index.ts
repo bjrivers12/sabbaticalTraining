@@ -1,11 +1,17 @@
 import init, { World } from "snake_game";
 
 init().then((_) => {
-  const CELL_SIZE = 10;
-  const world = World.new();
+  const CELL_SIZE = 20;
+  const WORLD_WIDTH = 8;
+  const SNAKE_SPAWN_IDX = 2;
+
+  const world = World.new(WORLD_WIDTH, SNAKE_SPAWN_IDX);
   const worldWidth = world.width();
-  const canvas = document.getElementById("snake-canvas");
+  const canvas = <HTMLCanvasElement>document.getElementById("snake-canvas");
   const ctx = canvas.getContext("2d");
+  if (!ctx) {
+    throw new Error("Could not get 2D context");
+  }
   canvas.height = worldWidth * CELL_SIZE;
   canvas.width = worldWidth * CELL_SIZE;
 
