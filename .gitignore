@@ -23,3 +23,4 @@ rust/hello_world/target/CACHEDIR.TAG
 rust/hello_world/target/
 */target/
 node_modules
+!loancli.txt

@@ -1,0 +1,200 @@
+Absolutely — as your CLI grows or if you want cleaner structure, splitting into multiple files makes a lot of sense. Right now, everything is in `main.rs`, but you could structure it like a small Rust project with separate modules. Here’s a sensible way:
+
+---
+
+### Suggested structure
+
+```
+loan_simulator/
+├─ Cargo.toml
+└─ src/
+   ├─ main.rs         # CLI entry point
+   ├─ loan.rs         # Loan calculation logic
+   └─ payment.rs      # PaymentEntry struct and formatting
+```
+
+---
+
+### 1️⃣ `src/payment.rs`
+
+```rust
+use std::fmt;
+
+#[derive(Debug)]
+pub struct PaymentEntry {
+    pub payment_number: usize,
+    pub days_in_period: usize,
+    pub period_interest: f64,
+    pub payment_amount: f64,
+    pub principal_paid: f64,
+    pub remaining_balance: f64,
+}
+
+impl fmt::Display for PaymentEntry {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "#{:3} | {:2}d | interest: ${:10.2} | payment: ${:8.2} | principal: ${:9.2} | balance: ${:10.2}",
+            self.payment_number,
+            self.days_in_period,
+            self.period_interest,
+            self.payment_amount,
+            self.principal_paid,
+            self.remaining_balance
+        )
+    }
+}
+```
+
+---
+
+### 2️⃣ `src/loan.rs`
+
+```rust
+use crate::payment::PaymentEntry;
+
+pub fn simulate_payoff(
+    mut principal: f64,
+    apr: f64,
+    base_payment: f64,
+    extra_payment: f64,
+    days_per_payment: usize,
+    max_payments: usize,
+) -> (Vec<PaymentEntry>, f64, usize, usize) {
+    let daily_rate = apr / 365.0;
+    let mut schedule: Vec<PaymentEntry> = Vec::new();
+    let mut payment_number = 0usize;
+    let mut total_interest_paid = 0.0;
+    let mut total_days = 0usize;
+
+    if principal <= 0.0 {
+        return (schedule, 0.0, 0, 0);
+    }
+
+    while principal > 0.0 && payment_number < max_payments {
+        payment_number += 1;
+        let balance_before = principal;
+
+        for _day in 0..days_per_payment {
+            let interest_for_day = principal * daily_rate;
+            principal += interest_for_day;
+            total_days += 1;
+        }
+
+        let interest_accrued = principal - balance_before;
+        let mut payment_total = base_payment + extra_payment;
+
+        if payment_total >= principal {
+            payment_total = principal;
+        }
+
+        let interest_paid = interest_accrued.min(payment_total);
+        let principal_paid = payment_total - interest_paid;
+        principal -= payment_total;
+        total_interest_paid += interest_paid;
+
+        schedule.push(PaymentEntry {
+            payment_number,
+            days_in_period: days_per_payment,
+            period_interest: interest_accrued,
+            payment_amount: payment_total,
+            principal_paid,
+            remaining_balance: if principal < 0.0 { 0.0 } else { principal },
+        });
+
+        if principal.abs() < 1e-8 {
+            principal = 0.0;
+        }
+    }
+
+    (schedule, total_interest_paid, payment_number, total_days)
+}
+```
+
+---
+
+### 3️⃣ `src/main.rs`
+
+```rust
+use clap::Parser;
+mod loan;
+mod payment;
+use loan::simulate_payoff;
+use payment::PaymentEntry;
+
+/// CLI entry point
+#[derive(Parser, Debug)]
+#[command(author, version, about = "Loan payoff simulator")]
+struct Args {
+    #[arg(short, long)]
+    principal: f64,
+    #[arg(short, long)]
+    apr: f64,
+    #[arg(short, long)]
+    payment: f64,
+    #[arg(short = 'x', long, default_value_t = 0.0)]
+    extra: f64,
+    #[arg(short, long, default_value_t = 30)]
+    days: usize,
+    #[arg(long, default_value_t = false)]
+    full: bool,
+}
+
+fn main() {
+    let args = Args::parse();
+
+    let principal = args.principal;
+    let apr = args.apr / 100.0;
+    let base_payment = args.payment;
+    let extra_payment = args.extra;
+    let days_per_payment = args.days;
+
+    let max_payments = 1000;
+
+    let (schedule, total_interest, payments, days) = simulate_payoff(
+        principal,
+        apr,
+        base_payment,
+        extra_payment,
+        days_per_payment,
+        max_payments,
+    );
+
+    if args.full {
+        for entry in &schedule {
+            println!("{}", entry);
+        }
+    } else {
+        for entry in schedule.iter().take(10) {
+            println!("{}", entry);
+        }
+        if schedule.len() > 10 {
+            println!("... ({} more payments)", schedule.len() - 10);
+        }
+    }
+
+    println!(
+        "\nPaid off in {} payments ({:.1} years / {} days). Total interest paid: ${:.2}",
+        payments,
+        days as f64 / 365.0,
+        days,
+        total_interest
+    );
+}
+```
+
+---
+
+✅ **Advantages of this structure:**
+
+1. `main.rs` only handles **CLI and printing**.
+2. `loan.rs` handles **core simulation logic**.
+3. `payment.rs` defines the **PaymentEntry** struct and formatting.
+4. Easy to add new features later (e.g., CSV output, plotting, or different payment schedules) without cluttering `main.rs`.
+5. Makes it easier to write **unit tests** for `loan.rs` separately.
+
+---
+
+If you want, I can also **add a tiny interactive mode**, where the program prompts you at runtime for principal, APR, payment, and extra instead of requiring command-line flags. That would feel more “user-friendly.”
+
+Do you want me to do that next?
