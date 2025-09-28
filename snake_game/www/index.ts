@@ -3,9 +3,9 @@ import init, { World } from "snake_game";
 init().then((_) => {
   const CELL_SIZE = 20;
   const WORLD_WIDTH = 8;
-  const SNAKE_SPAWN_IDX = Date.now() % (WORLD_WIDTH * WORLD_WIDTH);
+  const snakeSpawnIdx = Date.now() % (WORLD_WIDTH * WORLD_WIDTH);
 
-  const world = World.new(WORLD_WIDTH, SNAKE_SPAWN_IDX);
+  const world = World.new(WORLD_WIDTH, snakeSpawnIdx);
   const worldWidth = world.width();
   const canvas = <HTMLCanvasElement>document.getElementById("snake-canvas");
   const ctx = canvas.getContext("2d")!;
