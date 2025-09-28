@@ -3,16 +3,26 @@ use wasm_bindgen::prelude::*;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
+#[derive(PartialEq)]
+enum Direction {
+    Up,
+    Right,
+    Down,
+    Left
+}
+
 struct SnakeCells(usize);
 
 struct Snake {
     body: Vec<SnakeCells>,
+    direction: Direction,
 }
 
 impl Snake {
     fn new(spawn_index: usize) -> Snake {
         Snake {
             body: vec![SnakeCells(spawn_index)],
+            direction: Direction::Right,
         }
     }
 }
@@ -44,7 +54,16 @@ impl World {
 
     pub fn update(&mut self){
         let snake_idx = self.snake_head_idx();
-        self.snake.body[0].0 = (snake_idx + self.size - 1) % self.size;
+        let row = snake_idx /self.width;
+        
+        if self.snake.direction == Direction::Right {
+            let next_col = (snake_idx + 1) % self.width;
+            self.snake.body[0].0 = (row * self.width) + next_col;
+        }
+        if self.snake.direction == Direction::Left {
+            let next_col = (snake_idx - 1) % self.width;
+            self.snake.body[0].0 = (row * self.width) + next_col;
+        }
     }
 }
 
