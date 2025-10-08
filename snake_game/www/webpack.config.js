@@ -4,7 +4,16 @@ const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
-  entry: "./bootstrap.js",
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  entry: "./bootstrap.ts",
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "bundle.js",
@@ -17,6 +26,7 @@ module.exports = {
     asyncWebAssembly: true,
   },
   resolve: {
+    extensions: [".ts", ".tsx", ".js"],
     fallback: {
       stream: require.resolve("stream-browserify"),
       buffer: require.resolve("buffer/"),
