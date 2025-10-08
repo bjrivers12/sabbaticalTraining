@@ -15,7 +15,10 @@
     "copy-webpack-plugin": "^13.0.1",
     "snake_game": "file:../pkg",
     "webpack": "^5.101.3",
-    "webpack-cli": "^6.0.1"
+    "webpack-cli": "^6.0.1",
+    "process": "^0.11.10",
+  "stream-browserify": "^3.0.0",
+  "buffer": "^6.0.3"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
