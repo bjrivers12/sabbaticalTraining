@@ -26,6 +26,8 @@ RUN apt-get update && \
     rustup target add wasm32-unknown-unknown && \
     cargo install wasm-pack && \
     cargo install cargo-watch && \
+    # ✅ Install Clippy
+    rustup component add clippy && \
     # Install Go
     GO_VERSION=1.22.3 && \
     wget https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz && \
