@@ -36,7 +36,11 @@
                 "rust-lang.rust-analyzer",
                 "esbenp.prettier-vscode",
                 "dbaeumer.vscode-eslint",
-                "rvest.vs-code-prettier-eslint"
+                "rvest.vs-code-prettier-eslint",
+                "ms-python.black-formatter",
+                "ms-toolsai.datawrangler",
+                "mhutchie.git-graph",
+                "mechatroner.rainbow-csv"
             ]
         }
     }
