@@ -1,0 +1,563 @@
+   0.122197792s  INFO prepare_target{force=false package_id=snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game) target="snake_game"}: cargo::core::compiler::fingerprint: stale: changed "/workspaces/sabbaticalTraining/snake_game/target/debug/build/rustversion-86b5ebd19c9b3172/out/version.expr"
+   0.122236294s  INFO prepare_target{force=false package_id=snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game) target="snake_game"}: cargo::core::compiler::fingerprint:           (vs) "/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/rustversion-1cf13b52dfcc27ac/dep-lib-rustversion"
+   0.122242394s  INFO prepare_target{force=false package_id=snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game) target="snake_game"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1762127467, nanos: 0 } < FileTime { seconds: 1762127467, nanos: 303628800 }
+   0.138170588s  INFO prepare_target{force=false package_id=snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game) target="snake_game"}: cargo::core::compiler::fingerprint: dependency on `build_script_build` is newer than we are 1762127466.625750300s > 1762127466.000000000s "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasm-bindgen-shared-0.2.101"
+   0.148869421s  INFO prepare_target{force=false package_id=snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game) target="snake_game"}: cargo::core::compiler::fingerprint: dependency on `build_script_build` is newer than we are 1762127466.708642600s > 1762127466.000000000s "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/proc-macro2-1.0.101"
+   0.189046924s  INFO prepare_target{force=false package_id=snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game) target="snake_game"}: cargo::core::compiler::fingerprint: dependency on `build_script_build` is newer than we are 1762127467.014954200s > 1762127467.000000000s "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.175"
+   0.199024121s  INFO prepare_target{force=false package_id=snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game) target="snake_game"}: cargo::core::compiler::fingerprint: dependency on `build_script_build` is newer than we are 1762127466.498942800s > 1762127466.000000000s "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wee_alloc-0.4.5"
+   0.201305635s  INFO prepare_target{force=false package_id=snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game) target="snake_game"}: cargo::core::compiler::fingerprint: fingerprint error for snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("snake_game", ["cdylib"], "/workspaces/sabbaticalTraining/snake_game/src/lib.rs", Edition2024) }
+   0.201356038s  INFO prepare_target{force=false package_id=snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game) target="snake_game"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/snake_game-8dadba6940136027/lib-snake_game`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.297147313s  INFO prepare_target{force=false package_id=wasm-bindgen v0.2.101 target="wasm_bindgen"}: cargo::core::compiler::fingerprint: fingerprint error for wasm-bindgen v0.2.101/Check { test: false }/TargetInner { tested: false, ..: lib_target("wasm_bindgen", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasm-bindgen-0.2.101/src/lib.rs", Edition2021) }
+   0.297211316s  INFO prepare_target{force=false package_id=wasm-bindgen v0.2.101 target="wasm_bindgen"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/wasm-bindgen-37161c951cf76966/lib-wasm_bindgen`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  17: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  18: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  21: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  22: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  24: main
+  25: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  26: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  27: <unknown>
+   0.306445576s  INFO prepare_target{force=false package_id=cfg-if v1.0.3 target="cfg_if"}: cargo::core::compiler::fingerprint: fingerprint error for cfg-if v1.0.3/Check { test: false }/TargetInner { ..: lib_target("cfg_if", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cfg-if-1.0.3/src/lib.rs", Edition2018) }
+   0.306497179s  INFO prepare_target{force=false package_id=cfg-if v1.0.3 target="cfg_if"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/cfg-if-10728180720c2c52/lib-cfg_if`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  27: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  28: <unknown>
+   0.313909748s  INFO prepare_target{force=false package_id=once_cell v1.21.3 target="once_cell"}: cargo::core::compiler::fingerprint: fingerprint error for once_cell v1.21.3/Check { test: false }/TargetInner { ..: lib_target("once_cell", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.3/src/lib.rs", Edition2021) }
+   0.313990552s  INFO prepare_target{force=false package_id=once_cell v1.21.3 target="once_cell"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/once_cell-f00169dc87bb0076/lib-once_cell`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  27: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  28: <unknown>
+   0.326851693s  INFO prepare_target{force=false package_id=rustversion v1.0.22 target="rustversion"}: cargo::core::compiler::fingerprint: fingerprint dirty for rustversion v1.0.22/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("rustversion", ["proc-macro"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustversion-1.0.22/src/lib.rs", Edition2018) }
+   0.326912496s  INFO prepare_target{force=false package_id=rustversion v1.0.22 target="rustversion"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/rustversion-1cf13b52dfcc27ac/dep-lib-rustversion", reference_mtime: FileTime { seconds: 1762127467, nanos: 0 }, stale: "/workspaces/sabbaticalTraining/snake_game/target/debug/build/rustversion-86b5ebd19c9b3172/out/version.expr", stale_mtime: FileTime { seconds: 1762127467, nanos: 303628800 } }))
+   0.376193953s  INFO prepare_target{force=false package_id=wasm-bindgen v0.2.101 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint dirty for wasm-bindgen v0.2.101/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasm-bindgen-0.2.101/build.rs", Edition2021) }
+   0.376272157s  INFO prepare_target{force=false package_id=wasm-bindgen v0.2.101 target="build-script-build"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "build_script_build" })
+   0.409447611s  INFO prepare_target{force=false package_id=wasm-bindgen-shared v0.2.101 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint dirty for wasm-bindgen-shared v0.2.101/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasm-bindgen-shared-0.2.101/build.rs", Edition2021) }
+   0.409500013s  INFO prepare_target{force=false package_id=wasm-bindgen-shared v0.2.101 target="build-script-build"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { name: "build_script_build", dep_mtime: FileTime { seconds: 1762127466, nanos: 625750300 }, max_mtime: FileTime { seconds: 1762127466, nanos: 0 } })
+   0.426634867s  INFO prepare_target{force=false package_id=wasm-bindgen-macro v0.2.101 target="wasm_bindgen_macro"}: cargo::core::compiler::fingerprint: fingerprint dirty for wasm-bindgen-macro v0.2.101/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("wasm_bindgen_macro", ["proc-macro"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasm-bindgen-macro-0.2.101/src/lib.rs", Edition2021) }
+   0.426685170s  INFO prepare_target{force=false package_id=wasm-bindgen-macro v0.2.101 target="wasm_bindgen_macro"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "wasm_bindgen_macro_support" })
+   0.440560262s  INFO prepare_target{force=false package_id=quote v1.0.40 target="quote"}: cargo::core::compiler::fingerprint: fingerprint dirty for quote v1.0.40/Build/TargetInner { ..: lib_target("quote", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-1.0.40/src/lib.rs", Edition2018) }
+   0.440615164s  INFO prepare_target{force=false package_id=quote v1.0.40 target="quote"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "proc_macro2" })
+   0.453576110s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.101 target="proc_macro2"}: cargo::core::compiler::fingerprint: fingerprint dirty for proc-macro2 v1.0.101/Build/TargetInner { ..: lib_target("proc_macro2", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/proc-macro2-1.0.101/src/lib.rs", Edition2021) }
+   0.453630613s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.101 target="proc_macro2"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "build_script_build" })
+   0.480397247s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.101 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint dirty for proc-macro2 v1.0.101/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/proc-macro2-1.0.101/build.rs", Edition2021) }
+   0.480452950s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.101 target="build-script-build"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { name: "build_script_build", dep_mtime: FileTime { seconds: 1762127466, nanos: 708642600 }, max_mtime: FileTime { seconds: 1762127466, nanos: 0 } })
+   0.502435846s  INFO prepare_target{force=false package_id=wasm-bindgen-macro-support v0.2.101 target="wasm_bindgen_macro_support"}: cargo::core::compiler::fingerprint: fingerprint dirty for wasm-bindgen-macro-support v0.2.101/Build/TargetInner { ..: lib_target("wasm_bindgen_macro_support", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasm-bindgen-macro-support-0.2.101/src/lib.rs", Edition2021) }
+   0.502488849s  INFO prepare_target{force=false package_id=wasm-bindgen-macro-support v0.2.101 target="wasm_bindgen_macro_support"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "proc_macro2" })
+   0.518099927s  INFO prepare_target{force=false package_id=syn v2.0.106 target="syn"}: cargo::core::compiler::fingerprint: fingerprint dirty for syn v2.0.106/Build/TargetInner { ..: lib_target("syn", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-2.0.106/src/lib.rs", Edition2021) }
+   0.518164730s  INFO prepare_target{force=false package_id=syn v2.0.106 target="syn"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "proc_macro2" })
+   0.532220231s  INFO prepare_target{force=false package_id=wasm-bindgen-backend v0.2.101 target="wasm_bindgen_backend"}: cargo::core::compiler::fingerprint: fingerprint dirty for wasm-bindgen-backend v0.2.101/Build/TargetInner { ..: lib_target("wasm_bindgen_backend", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasm-bindgen-backend-0.2.101/src/lib.rs", Edition2021) }
+   0.532280534s  INFO prepare_target{force=false package_id=wasm-bindgen-backend v0.2.101 target="wasm_bindgen_backend"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "proc_macro2" })
+   0.556752853s  INFO prepare_target{force=false package_id=wasm-bindgen-shared v0.2.101 target="wasm_bindgen_shared"}: cargo::core::compiler::fingerprint: fingerprint dirty for wasm-bindgen-shared v0.2.101/Build/TargetInner { ..: lib_target("wasm_bindgen_shared", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasm-bindgen-shared-0.2.101/src/lib.rs", Edition2021) }
+   0.556804856s  INFO prepare_target{force=false package_id=wasm-bindgen-shared v0.2.101 target="wasm_bindgen_shared"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { name: "build_script_build" })
+   0.566270628s  INFO prepare_target{force=false package_id=wasm-bindgen-shared v0.2.101 target="wasm_bindgen_shared"}: cargo::core::compiler::fingerprint: fingerprint error for wasm-bindgen-shared v0.2.101/Check { test: false }/TargetInner { ..: lib_target("wasm_bindgen_shared", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasm-bindgen-shared-0.2.101/src/lib.rs", Edition2021) }
+   0.566330131s  INFO prepare_target{force=false package_id=wasm-bindgen-shared v0.2.101 target="wasm_bindgen_shared"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/wasm-bindgen-shared-b468c09bdd377447/lib-wasm_bindgen_shared`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  27: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  28: <unknown>
+   0.573143271s  INFO prepare_target{force=false package_id=unicode-ident v1.0.19 target="unicode_ident"}: cargo::core::compiler::fingerprint: fingerprint error for unicode-ident v1.0.19/Check { test: false }/TargetInner { ..: lib_target("unicode_ident", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-ident-1.0.19/src/lib.rs", Edition2018) }
+   0.573195373s  INFO prepare_target{force=false package_id=unicode-ident v1.0.19 target="unicode_ident"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/unicode-ident-dffda42621503124/lib-unicode_ident`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  18: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  19: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  20: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  21: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  23: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  24: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  25: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  26: main
+  27: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  28: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  29: <unknown>
+   0.579840504s  INFO prepare_target{force=false package_id=wee_alloc v0.4.5 target="wee_alloc"}: cargo::core::compiler::fingerprint: fingerprint error for wee_alloc v0.4.5/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("wee_alloc", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wee_alloc-0.4.5/src/lib.rs", Edition2015) }
+   0.579913408s  INFO prepare_target{force=false package_id=wee_alloc v0.4.5 target="wee_alloc"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/wee_alloc-ef73ff10a3cfa99e/lib-wee_alloc`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  17: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  18: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  21: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  22: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  24: main
+  25: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  26: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  27: <unknown>
+   0.587969310s  INFO prepare_target{force=false package_id=cfg-if v0.1.10 target="cfg_if"}: cargo::core::compiler::fingerprint: fingerprint error for cfg-if v0.1.10/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("cfg_if", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cfg-if-0.1.10/src/lib.rs", Edition2018) }
+   0.588024212s  INFO prepare_target{force=false package_id=cfg-if v0.1.10 target="cfg_if"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/cfg-if-e78a264a791a5337/lib-cfg_if`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  27: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  28: <unknown>
+   0.594451433s  INFO prepare_target{force=false package_id=libc v0.2.175 target="libc"}: cargo::core::compiler::fingerprint: fingerprint error for libc v0.2.175/Check { test: false }/TargetInner { ..: lib_target("libc", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.175/src/lib.rs", Edition2021) }
+   0.594508636s  INFO prepare_target{force=false package_id=libc v0.2.175 target="libc"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/libc-b6ccf97273914d88/lib-libc`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  27: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  28: <unknown>
+   0.620514532s  INFO prepare_target{force=false package_id=libc v0.2.175 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint dirty for libc v0.2.175/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.175/build.rs", Edition2021) }
+   0.620570035s  INFO prepare_target{force=false package_id=libc v0.2.175 target="build-script-build"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { name: "build_script_build", dep_mtime: FileTime { seconds: 1762127467, nanos: 14954200 }, max_mtime: FileTime { seconds: 1762127467, nanos: 0 } })
+   0.636652936s  INFO prepare_target{force=false package_id=memory_units v0.4.0 target="memory_units"}: cargo::core::compiler::fingerprint: fingerprint error for memory_units v0.4.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("memory_units", ["lib"], "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/memory_units-0.4.0/src/lib.rs", Edition2015) }
+   0.636707439s  INFO prepare_target{force=false package_id=memory_units v0.4.0 target="memory_units"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/memory_units-a05f503e71116e57/lib-memory_units`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  27: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  28: <unknown>
+   0.660025501s  INFO prepare_target{force=false package_id=wee_alloc v0.4.5 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint dirty for wee_alloc v0.4.5/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wee_alloc-0.4.5/build.rs", Edition2015) }
+   0.660079404s  INFO prepare_target{force=false package_id=wee_alloc v0.4.5 target="build-script-build"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { name: "build_script_build", dep_mtime: FileTime { seconds: 1762127466, nanos: 498942800 }, max_mtime: FileTime { seconds: 1762127466, nanos: 0 } })
+   0.677732284s  INFO prepare_target{force=false package_id=snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game) target="snake_game"}: cargo::core::compiler::fingerprint: fingerprint error for snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("snake_game", ["cdylib"], "/workspaces/sabbaticalTraining/snake_game/src/lib.rs", Edition2024) }
+   0.677795787s  INFO prepare_target{force=false package_id=snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game) target="snake_game"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/sabbaticalTraining/snake_game/target/debug/.fingerprint/snake_game-0e72112fdb923baa/test-lib-snake_game`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/f8297e351a40c1439a467bbbb6879088047f50b3/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+    Checking unicode-ident v1.0.19
+    Checking once_cell v1.21.3
+    Checking cfg-if v1.0.3
+    Checking cfg-if v0.1.10
+    Checking memory_units v0.4.0
+   Compiling wasm-bindgen-shared v0.2.101
+   Compiling proc-macro2 v1.0.101
+   Compiling libc v0.2.175
+   Compiling wee_alloc v0.4.5
+   Compiling rustversion v1.0.22
+   Compiling wasm-bindgen v0.2.101
+   Compiling quote v1.0.40
+   Compiling syn v2.0.106
+   Compiling wasm-bindgen-backend v0.2.101
+   Compiling wasm-bindgen-macro-support v0.2.101
+   Compiling wasm-bindgen-macro v0.2.101
+    Checking snake_game v0.1.0 (/workspaces/sabbaticalTraining/snake_game)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 10.33s
