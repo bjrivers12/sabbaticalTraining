@@ -24,3 +24,5 @@ rust/hello_world/target/
 */target/
 node_modules
 !loancli.txt
+build/
+dist/

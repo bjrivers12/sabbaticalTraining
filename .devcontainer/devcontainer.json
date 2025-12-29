@@ -40,7 +40,8 @@
                 "ms-python.black-formatter",
                 "ms-toolsai.datawrangler",
                 "mhutchie.git-graph",
-                "mechatroner.rainbow-csv"
+                "mechatroner.rainbow-csv",
+                "ms-vscode.cpptools-themes"
             ]
         }
     }
