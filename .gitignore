@@ -25,4 +25,27 @@ rust/hello_world/target/
 node_modules
 !loancli.txt
 build/
+target/
 dist/
+*.exe
+*.out
+*.test
+# Generic compiled binaries
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+bin/
+build/
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json
+# macOS
+.DS_Store
+array_adt
+main
+
+# Vim
+*.swp
