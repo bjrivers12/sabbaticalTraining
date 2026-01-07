@@ -32,3 +32,7 @@ simple_bank=#
 ropdb simple_bank
 migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" --verbose up
   306  docker logs postgres18*/
+
+/*
+  brew install sqlc
+docker pull sqlc/sqlc*/
