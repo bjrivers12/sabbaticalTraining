@@ -5,6 +5,7 @@ RUN apt-get update && \
     build-essential \
     gdb \
     cmake \
+    clang-format \
     zsh \
     fish \
     tmux \
